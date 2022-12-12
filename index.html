@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        .gallery {
+            background-color: antiquewhite;
+            box-sizing: border-box;
+            width: fit-content;
+            padding: 20px;
+            border: 25px solid gray;
+            margin: auto;
+
+        }
+
+
+        #myImg {
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #myImg:hover {
+            opacity: 0.7;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.9);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content (image) */
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+
+        /* Add Animation */
+        .modal-content,
+        #caption {
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.6s;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @-webkit-keyframes zoom {
+            from {
+                -webkit-transform: scale(0)
+            }
+
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scale(0)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
+        /* The Close Button */
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* 100% Image Width on Smaller Screens */
+        @media only screen and (max-width: 700px) {
+            .modal-content {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="gallery">
+        <table>
+            <tr>
+                <td><img id="myImg" src="images-webdev/1.jpg" width="200" height="200"></td>
+                <td><img id="myImg" src="images-webdev/2.jpg" width="200" height="200"></td>
+                <td><img id="myImg" src="images-webdev/3.jpg" width="200" height="200"></td>
+                <td><img id="myImg" src="images-webdev/4.jpg" width="200" height="200"></td>
+                <td><img id="myImg" src="images-webdev/5.jpg" width="200" height="200"></td>
+                <td><img id="myImg" src="images-webdev/6.jpg" width="200" height="200"></td>
+                <td><img id="myImg" src="images-webdev/7.jpg" width="200" height="200"></td>
+                <td><img id="myImg" src="images-webdev/8.jpg" width="200" height="200"></td>
+                <td><img id="myImg" src="images-webdev/9.jpg" width="200" height="200"></td>
+                <td><img id="myImg" src="images-webdev/10.jpg" width="200" height="200"></td>
+            </tr>
+            <td><img id="myImg" src="images-webdev/mix1.jpg" width="200" height="200"></td>
+            <td><img id="myImg" src="images-webdev/mix2.jpg" width="200" height="200"></td>
+            <td><img id="myImg" src="images-webdev/mix3.jpg" width="200" height="200"></td>
+            <td><img id="myImg" src="images-webdev/mix4.jpg" width="200" height="200"></td>
+            <td><img id="myImg" src="images-webdev/mix5.jpg" width="200" height="200"></td>
+            <td><img id="myImg" src="images-webdev/mix6.jpg" width="200" height="200"></td>
+            <td><img id="myImg" src="images-webdev/mix7.jpg" width="200" height="200"></td>
+            <td><img id="myImg" src="images-webdev/mix8.jpg" width="200" height="200"></td>
+            <td><img id="myImg" src="images-webdev/mix9.jpg" width="200" height="200"></td>
+            <td><img id="myImg" src="images-webdev/mix10.jpg" width="200" height="200"></td>
+
+            <tr>
+                <td><img id="myImg" src="images-webdev/pastel1.jpg" width="200" height="200"></td>
+                <td><img id="myImg" src="images-webdev/pastel2.jpg" width="200" height="200"></td>
+                <td><img id="myImg" src="images-webdev/pastel3.jpg" width="200" height="200"></td>
+                <td><img id="myImg" src="images-webdev/pastel4.jpg" width="200" height="200"></td>
+                <td><img id="myImg" src="images-webdev/pastel5.jpg" width="200" height="200"></td>
+                <td><img id="myImg" src="images-webdev/pastel6.jpg" width="200" height="200"></td>
+                <td><img id="myImg" src="images-webdev/pastel7.jpg" width="200" height="200"></td>
+                <td><img id="myImg" src="images-webdev/pastel8.jpg" width="200" height="200"></td>
+                <td><img id="myImg" src="images-webdev/pastel9.jpg" width="200" height="200"></td>
+                <td><img id="myImg" src="images-webdev/pastel10.jpg" width="200" height="200"></td>
+            </tr>
+
+            <tr>
+                <td><img id="myImg" src="images-webdev/flower1.jpg" width="200" height="200"></td>
+                <td><img id="myImg" src="images-webdev/flower2.jpg" width="200" height="200"></td>
+                <td><img id="myImg" src="images-webdev/flower3.jpg" width="200" height="200"></td>
+                <td><img id="myImg" src="images-webdev/flower4.jpg" width="200" height="200"></td>
+                <td><img id="myImg" src="images-webdev/flower5.jpg" width="200" height="200"></td>
+                <td><img id="myImg" src="images-webdev/flower6.jpg" width="200" height="200"></td>
+                <td><img id="myImg" src="images-webdev/flower7.jpg" width="200" height="200"></td>
+                <td><img id="myImg" src="images-webdev/flower8.jpg" width="200" height="200"></td>
+                <td><img id="myImg" src="images-webdev/flower9.jpg" width="200" height="200"></td>
+                <td><img id="myImg" src="images-webdev/flower10.jpg" width="200" height="200"></td>
+
+            </tr>
+
+        </table>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-img">
+        <div id="caption"></div>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.getElementById("myImg");
+        var modalImg = document.getElementById("modal-img");
+        var captionText = document.getElementById("caption");
+        img.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        }
+
+
+        document.addEventListener("click", (e) => {
+            const elem = e.target;
+            if (elem.id === "myImg") {
+                modal.style.display = "block";
+                modalImg.src = elem.dataset.biggerSrc || elem.src;
+                captionText.innerHTML = elem.alt;
+            }
+        })
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+    <div class="container">
+        <div class="image-container">
+            <div class="image"> <img src="images-webdev/my world.jpeg">
+            </div>
+
+        </div>
+
+
+    </div>
+
+   <div class="gallery">
+  <a target="_blank" href="">
+    <img src="images-webdev/5812ca5b-67f1-4066-9436-bd41b4a98962.jpeg" alt="" width="600" height="400">
+  </a>
+</div>
+-->
+
+
+
+</body>
+
+</html>
